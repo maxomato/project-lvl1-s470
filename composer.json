@@ -3,5 +3,8 @@
     "type": "project",
     "require": {
         "php": "^7.0"
-    }
+    },
+    "bin": [
+        "bin/brain-games"
+    ]
 }
