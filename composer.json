@@ -1,10 +1,14 @@
 {
     "name": "maxomato/brain-games",
     "type": "project",
-    "require": {
-        "php": "^7.0"
-    },
-    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Maxim Popov",
+            "email": "maxomato@gmail.com"
+        }
+    ],
+    "description": "The set of console games",
+    "keywords": ["console", "game"],
     "bin": [
         "bin/brain-games"
     ]
