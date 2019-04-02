@@ -1,4 +1,7 @@
 #!/usr/bin/env php
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
-BrainGames\Cli\run();
+
+use function BrainGames\Cli\run;
+
+run();
