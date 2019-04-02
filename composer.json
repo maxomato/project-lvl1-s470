@@ -10,11 +10,13 @@
     "description": "The set of console games",
     "keywords": ["console", "game"],
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "autoload": {
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Even.php"
         ]
     },
     "scripts": {
