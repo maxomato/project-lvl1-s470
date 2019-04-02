@@ -9,6 +9,7 @@
     ],
     "description": "The set of console games",
     "keywords": ["console", "game"],
+    "minimum-stability": "dev",
     "bin": [
         "bin/brain-games"
     ]
