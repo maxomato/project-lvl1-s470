@@ -1,2 +1,2 @@
 #!/usr/bin/php
-<?php require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'index.php'; ?>
+<?php echo 'Welcome to the Brain Games!', PHP_EOL; ?>
