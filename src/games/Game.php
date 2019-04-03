@@ -4,6 +4,7 @@ namespace BrainGames\Game;
 use function BrainGames\Game\Calc\getQuestionCalc;
 use function BrainGames\Game\Even\getQuestionEven;
 use function BrainGames\Game\Gcd\getQuestionGcd;
+use function BrainGames\Game\Progression\getQuestionProgression;
 
 const MIN_RANDOM_NUMBER = 1;
 const MAX_RANDOM_NUMBER = 100;
@@ -19,6 +20,9 @@ function getQuestion($type)
 
         case 'gcd':
             return getQuestionGcd();
+
+        case 'progression':
+            return getQuestionProgression();
     }
 
     return [

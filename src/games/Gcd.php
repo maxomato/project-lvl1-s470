@@ -12,7 +12,6 @@ function runGcd()
     ]);
 }
 
-
 function getQuestionGcd()
 {
     $a = getRandomNumber();
