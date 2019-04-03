@@ -3,7 +3,7 @@
 
 require_once __DIR__ . '/../src/autoload.php';
 
-use function BrainGames\Cli\runGcd;
+use function BrainGames\Game\Gcd\runGcd;
 
 runGcd();
 

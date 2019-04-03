@@ -1,9 +1,18 @@
 <?php
 namespace BrainGames\Game\Calc;
 
+use function BrainGames\Cli\run;
 use function BrainGames\Game\getRandomNumber;
 
 const OPERATIONS = ['*', '-', '+'];
+
+function runCalc()
+{
+    run([
+        'type' => 'calc',
+        'info' => 'What is the result of the expression?'
+    ]);
+}
 
 function getQuestionCalc()
 {

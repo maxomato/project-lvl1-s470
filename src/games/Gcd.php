@@ -1,7 +1,17 @@
 <?php
 namespace BrainGames\Game\Gcd;
 
+use function BrainGames\Cli\run;
 use function BrainGames\Game\getRandomNumber;
+
+function runGcd()
+{
+    run([
+        'type' => 'gcd',
+        'info' => 'Find the greatest common divisor of given numbers.'
+    ]);
+}
+
 
 function getQuestionGcd()
 {

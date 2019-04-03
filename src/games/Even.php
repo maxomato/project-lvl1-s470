@@ -1,7 +1,16 @@
 <?php
 namespace BrainGames\Game\Even;
 
-use function BrainGames\Game\Calc\getRandomNumber;
+use function BrainGames\Cli\run;
+use function BrainGames\Game\getRandomNumber;
+
+function runEven()
+{
+    run([
+        'type' => 'even',
+        'info' => 'Answer "yes" if number even otherwise answer "no".'
+    ]);
+}
 
 function getQuestionEven()
 {

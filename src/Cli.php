@@ -7,30 +7,6 @@ use function BrainGames\Game\getQuestion;
 
 const ROUNDS_COUNT = 3;
 
-function runEven()
-{
-    run([
-        'type' => 'even',
-        'info' => 'Answer "yes" if number even otherwise answer "no".'
-    ]);
-}
-
-function runCalc()
-{
-    run([
-        'type' => 'calc',
-        'info' => 'What is the result of the expression?'
-    ]);
-}
-
-function runGcd()
-{
-    run([
-        'type' => 'gcd',
-        'info' => 'Find the greatest common divisor of given numbers.'
-    ]);
-}
-
 function run(array $config = [])
 {
     $info = $config['info'] ?? '';
