@@ -23,6 +23,14 @@ function runCalc()
     ]);
 }
 
+function runGcd()
+{
+    run([
+        'type' => 'gcd',
+        'info' => 'Find the greatest common divisor of given numbers.'
+    ]);
+}
+
 function run(array $config = [])
 {
     $info = $config['info'] ?? '';
