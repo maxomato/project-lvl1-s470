@@ -6,16 +6,12 @@ use function cli\prompt;
 use function BrainGames\Even\runEven;
 use function BrainGames\Calc\runCalc;
 
-function run($type)
+function run($config)
 {
-    $info = '';
-    if ($type == 'even') {
-        $info = 'Answer "yes" if number even otherwise answer "no".';
-    } elseif ($type == 'calc') {
-        $info = 'What is the result of the expression?';
-    }
-
+    $info = $config['info'] ?? '';
     $name = getName($info);
+
+    $type = $config['type'] ?? '';
     if ($type == 'even') {
         runEven($name);
     } elseif ($type == 'calc') {

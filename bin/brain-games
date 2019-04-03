@@ -11,5 +11,5 @@ if (file_exists($autoloadPath1)) {
 
 use function BrainGames\Cli\run;
 
-$type = isset($type) ? $type : '';
-run($type);
+$config = isset($config) ? $config : [];
+run($config);

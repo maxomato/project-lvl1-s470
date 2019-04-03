@@ -1,5 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-$type = 'calc';
+$config = [
+    'type' => 'calc',
+    'info' => 'What is the result of the expression?'
+];
 require_once __DIR__ . '/brain-games';

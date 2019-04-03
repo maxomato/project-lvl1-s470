@@ -1,5 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-$type = 'even';
+$config = [
+    'type' => 'even',
+    'info' => 'Answer "yes" if number even otherwise answer "no".'
+];
 require_once __DIR__ . '/brain-games';
