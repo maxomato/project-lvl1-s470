@@ -4,13 +4,17 @@ namespace BrainGames\Even;
 use function cli\line;
 use function cli\prompt;
 
+const MAX_COUNT_TRY = 3;
+const MIN_RANDOM_NUMBER = 1;
+const MAX_RANDOM_NUMBER = 100;
+
 function runEven($userName)
 {
-    for ($i = 0; $i < 3; $i++) {
-        $randomNumber = rand(1, 100);
+    for ($i = 0; $i < MAX_COUNT_TRY; $i++) {
+        $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         line("Question: %s", $randomNumber);
 
-        $answer = prompt('Your answer: ');
+        $answer = prompt('Your answer');
 
         $isEven = isEven($randomNumber);
         $correctAnswer = $isEven ? 'yes' : 'no';
