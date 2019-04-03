@@ -10,10 +10,9 @@ function getQuestionCalc()
     $a = getRandomNumber();
     $b = getRandomNumber();
     $operation = getRandomOperation();
-    $content = join(' ', [$a, $operation, $b]);
 
     return [
-        'content' => $content,
+        'content' => join(' ', [$a, $operation, $b]),
         'answer' => getRightAnswer($a, $b, $operation)
     ];
 }

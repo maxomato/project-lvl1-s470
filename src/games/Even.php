@@ -6,13 +6,11 @@ const MAX_RANDOM_NUMBER = 100;
 
 function getQuestionEven()
 {
-    $randomNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-
-    $isEven = isEven($randomNumber);
+    $question = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
     return [
-        'content' => $randomNumber,
-        'answer' => $isEven ? 'yes' : 'no'
+        'content' => $question,
+        'answer' => isEven($question) ? 'yes' : 'no'
     ];
 }
 

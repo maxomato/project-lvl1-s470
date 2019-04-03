@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-$config = [
-    'type' => 'even',
-    'info' => 'Answer "yes" if number even otherwise answer "no".'
-];
-require_once __DIR__ . '/brain-games';
+require_once __DIR__ . '/../src/autoload.php';
+
+use function BrainGames\Cli\runEven;
+
+runEven();

@@ -1,14 +1,29 @@
 <?php
 namespace BrainGames\Cli;
 
-
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Game\getQuestion;
 
 const ROUNDS_COUNT = 3;
 
-function run($config)
+function runEven()
+{
+    run([
+        'type' => 'even',
+        'info' => 'Answer "yes" if number even otherwise answer "no".'
+    ]);
+}
+
+function runCalc()
+{
+    run([
+        'type' => 'calc',
+        'info' => 'What is the result of the expression?'
+    ]);
+}
+
+function run(array $config = [])
 {
     $info = $config['info'] ?? '';
     $userName = getName($info);
@@ -27,10 +42,10 @@ function run($config)
 
         $answer = prompt('Your answer');
 
-        $correctAnswer = $question['answer'];
+        $rightAnswer = $question['answer'];
 
-        if ($answer != $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+        if ($answer != $rightAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
             line("Let's try again, %s!", $userName);
 
             return;
