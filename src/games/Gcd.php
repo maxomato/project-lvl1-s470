@@ -28,5 +28,5 @@ function getQuestionGcd()
 
 function getGcd(int $a, int $b)
 {
-    return ($a % $b) ? getGcd($b,$a % $b) : $b;
+    return ($a % $b) ? getGcd($b, $a % $b) : $b;
 }
