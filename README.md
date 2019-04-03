@@ -2,3 +2,4 @@
 [![Build Status](https://travis-ci.org/maxomato/project-lvl1-s470.svg?branch=master)](https://travis-ci.org/maxomato/project-lvl1-s470)
 [![asciicast](https://asciinema.org/a/o7a01do0kAR1OxozqMf35Jrln.svg)](https://asciinema.org/a/o7a01do0kAR1OxozqMf35Jrln)
 [![asciicast](https://asciinema.org/a/L2jCoUtYOV5wQpXIjcTswVfC6.svg)](https://asciinema.org/a/L2jCoUtYOV5wQpXIjcTswVfC6)
+[![asciicast](https://asciinema.org/a/8M4OM5nzADX7J5ShU5UPnuFTP.svg)](https://asciinema.org/a/8M4OM5nzADX7J5ShU5UPnuFTP)
