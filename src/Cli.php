@@ -4,17 +4,22 @@ namespace BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Even\runEven;
+use function BrainGames\Calc\runCalc;
 
 function run($type)
 {
     $info = '';
     if ($type == 'even') {
         $info = 'Answer "yes" if number even otherwise answer "no".';
+    } elseif ($type == 'calc') {
+        $info = 'What is the result of the expression?';
     }
 
     $name = getName($info);
     if ($type == 'even') {
         runEven($name);
+    } elseif ($type == 'calc') {
+        runCalc($name);
     }
 }
 
