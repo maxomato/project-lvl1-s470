@@ -11,9 +11,16 @@ function getQuestionCalc()
     $b = getRandomNumber();
     $operation = getRandomOperation();
 
+    $rightAnswer = getRightAnswer($a, $b, $operation);
+    if (is_null($rightAnswer)) {
+        return [
+            'error' => "Error! Operation {$operation} isn't supported"
+        ];
+    }
+
     return [
         'content' => join(' ', [$a, $operation, $b]),
-        'answer' => getRightAnswer($a, $b, $operation)
+        'answer' => $rightAnswer
     ];
 }
 

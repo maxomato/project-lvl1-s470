@@ -32,8 +32,8 @@ function run(array $config = [])
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $question = getQuestion($type);
-        if (is_null($question)) {
-            line("Error! Game type '%s' is not supported!", $type);
+        if (isset($question['error'])) {
+            line($question['error']);
 
             return;
         }

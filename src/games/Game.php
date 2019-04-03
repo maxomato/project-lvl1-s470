@@ -14,5 +14,7 @@ function getQuestion($type)
             return getQuestionCalc();
     }
 
-    return null;
+    return [
+        'error' => "Error! Game type '$type' is not supported!"
+    ];
 }
