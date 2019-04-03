@@ -61,8 +61,11 @@ function getName(string $info = '')
 {
     line('Welcome to the Brain Game!');
     line($info);
+    line();
+
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line();
 
     return $name;
 }
