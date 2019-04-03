@@ -1,22 +1,45 @@
 <?php
 namespace BrainGames\Cli;
 
+
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Even\runEven;
-use function BrainGames\Calc\runCalc;
+use function BrainGames\Game\getQuestion;
+
+const ROUNDS_COUNT = 3;
 
 function run($config)
 {
     $info = $config['info'] ?? '';
-    $name = getName($info);
+    $userName = getName($info);
 
     $type = $config['type'] ?? '';
-    if ($type == 'even') {
-        runEven($name);
-    } elseif ($type == 'calc') {
-        runCalc($name);
+
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+        $question = getQuestion($type);
+        if (is_null($question)) {
+            line("Error! Game type '%s' is not supported!", $type);
+
+            return;
+        }
+
+        line('Question: %s', $question['content']);
+
+        $answer = prompt('Your answer');
+
+        $correctAnswer = $question['answer'];
+
+        if ($answer != $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
+            line("Let's try again, %s!", $userName);
+
+            return;
+        }
+
+        line("Correct!");
     }
+
+    line("Congratulations, %s!", $userName);
 }
 
 function getName(string $info = '')
