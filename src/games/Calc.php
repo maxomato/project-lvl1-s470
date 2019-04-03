@@ -1,8 +1,8 @@
 <?php
 namespace BrainGames\Game\Calc;
 
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 100;
+use function BrainGames\Game\getRandomNumber;
+
 const OPERATIONS = ['*', '-', '+'];
 
 function getQuestionCalc()
@@ -29,11 +29,6 @@ function getRandomOperation()
     $i = rand(0, count(OPERATIONS) - 1);
 
     return OPERATIONS[$i];
-}
-
-function getRandomNumber()
-{
-    return rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 }
 
 function getRightAnswer(int $a, int $b, string $operation)

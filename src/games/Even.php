@@ -1,12 +1,11 @@
 <?php
 namespace BrainGames\Game\Even;
 
-const MIN_RANDOM_NUMBER = 1;
-const MAX_RANDOM_NUMBER = 100;
+use function BrainGames\Game\Calc\getRandomNumber;
 
 function getQuestionEven()
 {
-    $question = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $question = getRandomNumber();
 
     return [
         'content' => $question,
