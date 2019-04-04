@@ -3,26 +3,20 @@ namespace BrainGames\Cli;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Game\getQuestion;
 
 const ROUNDS_COUNT = 3;
 
-function run(array $config = [])
+function run(\Closure $getQuestion = null, string $info = '')
 {
-    $info = $config['info'] ?? '';
     $userName = getName($info);
-
-    $type = $config['type'] ?? '';
+    if (is_null($getQuestion)) {
+        return;
+    }
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $question = getQuestion($type);
-        if (isset($question['error'])) {
-            line($question['error']);
+        $question = $getQuestion();
 
-            return;
-        }
-
-        line('Question: %s', $question['content']);
+        line('Question: %s', $question['question']);
 
         $answer = prompt('Your answer');
 
@@ -44,7 +38,9 @@ function run(array $config = [])
 function getName(string $info = '')
 {
     line('Welcome to the Brain Game!');
-    line($info);
+    if (!empty($info)) {
+        line($info);
+    }
     line();
 
     $name = prompt('May I have your name?');

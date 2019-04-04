@@ -3,21 +3,26 @@ namespace BrainGames\Game\Even;
 
 use function BrainGames\Cli\run;
 
+const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+
 function runEven()
 {
-    run([
-        'type' => 'even',
-        'info' => 'Answer "yes" if number even otherwise answer "no".'
-    ]);
+    run(
+        function () {
+            return getQuestionEven();
+        },
+        DESCRIPTION
+    );
 }
 
 function getQuestionEven()
 {
     $question = rand(0, 100);
+    $answer = isEven($question) ? 'yes' : 'no';
 
     return [
-        'content' => $question,
-        'answer' => isEven($question) ? 'yes' : 'no'
+        'question' => $question,
+        'answer' => $answer
     ];
 }
 

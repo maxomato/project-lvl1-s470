@@ -3,40 +3,39 @@ namespace BrainGames\Game\Calc;
 
 use function BrainGames\Cli\run;
 
-const OPERATIONS = ['*', '-', '+'];
+const OPERATORS = ['*', '-', '+'];
+const DESCRIPTION = 'What is the result of the expression?';
 
 function runCalc()
 {
-    run([
-        'type' => 'calc',
-        'info' => 'What is the result of the expression?'
-    ]);
+    run(
+        function () {
+            return getQuestionCalc();
+        },
+        DESCRIPTION
+    );
 }
 
 function getQuestionCalc()
 {
     $a = rand(0, 100);
     $b = rand(0, 100);
-    $operation = getRandomOperation();
+    $operators = getRandomOperators();
 
-    $rightAnswer = getRightAnswer($a, $b, $operation);
-    if (is_null($rightAnswer)) {
-        return [
-            'error' => "Error! Operation {$operation} isn't supported"
-        ];
-    }
+    $question = join(' ', [$a, $operators, $b]);
+    $answer = getRightAnswer($a, $b, $operators);
 
     return [
-        'content' => join(' ', [$a, $operation, $b]),
-        'answer' => $rightAnswer
+        'question' => $question,
+        'answer' => $answer
     ];
 }
 
-function getRandomOperation()
+function getRandomOperators()
 {
-    $i = rand(0, count(OPERATIONS) - 1);
+    $i = rand(0, count(OPERATORS) - 1);
 
-    return OPERATIONS[$i];
+    return OPERATORS[$i];
 }
 
 function getRightAnswer(int $a, int $b, string $operation)

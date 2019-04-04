@@ -3,12 +3,16 @@ namespace BrainGames\Game\Gcd;
 
 use function BrainGames\Cli\run;
 
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+
 function runGcd()
 {
-    run([
-        'type' => 'gcd',
-        'info' => 'Find the greatest common divisor of given numbers.'
-    ]);
+    run(
+        function () {
+            return getQuestionGcd();
+        },
+        DESCRIPTION
+    );
 }
 
 function getQuestionGcd()
@@ -16,11 +20,12 @@ function getQuestionGcd()
     $a = rand(0, 100);
     $b = rand(0, 100);
 
-    $rightAnswer = getGcd($a, $b);
+    $question = join(' ', [$a, $b]);
+    $answer = getGcd($a, $b);
 
     return [
-        'content' => join(' ', [$a, $b]),
-        'answer' => $rightAnswer
+        'question' => $question,
+        'answer' => $answer
     ];
 }
 

@@ -6,13 +6,16 @@ use function BrainGames\Cli\run;
 const START_PROGRESSION = 3;
 const STEP_PROGRESSION = 3;
 const LENGTH_PROGRESSION = 10;
+const DESCRIPTION = 'What number is missing in the progression?';
 
 function runProgression()
 {
-    run([
-        'type' => 'progression',
-        'info' => 'What number is missing in the progression?'
-    ]);
+    run(
+        function () {
+            return getQuestionProgression();
+        },
+        DESCRIPTION
+    );
 }
 
 function getQuestionProgression()
@@ -21,12 +24,14 @@ function getQuestionProgression()
 
     $i = rand(0, count($progression) - 1);
 
-    $rightAnswer = $progression[$i];
+    $answer = $progression[$i];
+
     $progression[$i] = '..';
+    $question = join(' ', $progression);
 
     return [
-        'content' => join(' ', $progression),
-        'answer' => $rightAnswer
+        'question' => $question,
+        'answer' => $answer
     ];
 }
 
