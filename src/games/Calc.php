@@ -10,13 +10,13 @@ function runCalc()
 {
     run(
         function () {
-            return getQuestionCalc();
+            return getSessionCalc();
         },
         DESCRIPTION
     );
 }
 
-function getQuestionCalc()
+function getSessionCalc()
 {
     $a = rand(0, 100);
     $b = rand(0, 100);

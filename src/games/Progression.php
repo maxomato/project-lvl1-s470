@@ -12,13 +12,13 @@ function runProgression()
 {
     run(
         function () {
-            return getQuestionProgression();
+            return getSessionProgression();
         },
         DESCRIPTION
     );
 }
 
-function getQuestionProgression()
+function getSessionProgression()
 {
     $progression = range(
         START,

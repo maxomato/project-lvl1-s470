@@ -9,13 +9,13 @@ function runGcd()
 {
     run(
         function () {
-            return getQuestionGcd();
+            return getSessionGcd();
         },
         DESCRIPTION
     );
 }
 
-function getQuestionGcd()
+function getSessionGcd()
 {
     $a = rand(0, 100);
     $b = rand(0, 100);
