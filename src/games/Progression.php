@@ -3,9 +3,9 @@ namespace BrainGames\Game\Progression;
 
 use function BrainGames\GameEngine\run;
 
-const START_PROGRESSION = 3;
-const STEP_PROGRESSION = 3;
-const LENGTH_PROGRESSION = 10;
+const START = 3;
+const STEP = 3;
+const LENGTH = 10;
 const DESCRIPTION = 'What number is missing in the progression?';
 
 function runProgression()
@@ -20,26 +20,21 @@ function runProgression()
 
 function getQuestionProgression()
 {
-    $progression = getProgression();
+    $progression = range(
+        START,
+        START + STEP * LENGTH,
+        STEP
+    );
 
-    $i = rand(0, count($progression) - 1);
+    $answerIndex = rand(0, LENGTH);
 
-    $answer = $progression[$i];
+    $answer = $progression[$answerIndex];
 
-    $progression[$i] = '..';
+    $progression[$answerIndex] = '..';
     $question = join(' ', $progression);
 
     return [
         'question' => $question,
         'answer' => $answer
     ];
-}
-
-function getProgression()
-{
-    return range(
-        START_PROGRESSION,
-        START_PROGRESSION + STEP_PROGRESSION * LENGTH_PROGRESSION,
-        STEP_PROGRESSION
-    );
 }
