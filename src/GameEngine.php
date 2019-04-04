@@ -8,7 +8,16 @@ const ROUNDS_COUNT = 3;
 
 function run(\Closure $getQuestion = null, string $info = '')
 {
-    $userName = getName($info);
+    line('Welcome to the Brain Game!');
+    if (!empty($info)) {
+        line($info);
+    }
+    line();
+
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line();
+
     if (is_null($getQuestion)) {
         return;
     }
@@ -33,19 +42,4 @@ function run(\Closure $getQuestion = null, string $info = '')
     }
 
     line("Congratulations, %s!", $userName);
-}
-
-function getName(string $info = '')
-{
-    line('Welcome to the Brain Game!');
-    if (!empty($info)) {
-        line($info);
-    }
-    line();
-
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line();
-
-    return $name;
 }
