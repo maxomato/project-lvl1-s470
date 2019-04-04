@@ -20,7 +20,7 @@ function getSessionGcd()
     $a = rand(0, 100);
     $b = rand(0, 100);
 
-    $question = join(' ', [$a, $b]);
+    $question = "$a $b";
     $answer = getGcd($a, $b);
 
     return [
