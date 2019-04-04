@@ -1,7 +1,7 @@
 <?php
 namespace BrainGames\Game\Progression;
 
-use function BrainGames\Cli\run;
+use function BrainGames\GameEngine\run;
 
 const START_PROGRESSION = 3;
 const STEP_PROGRESSION = 3;

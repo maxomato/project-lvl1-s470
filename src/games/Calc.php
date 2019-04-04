@@ -1,7 +1,7 @@
 <?php
 namespace BrainGames\Game\Calc;
 
-use function BrainGames\Cli\run;
+use function BrainGames\GameEngine\run;
 
 const OPERATORS = ['*', '-', '+'];
 const DESCRIPTION = 'What is the result of the expression?';

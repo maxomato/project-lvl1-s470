@@ -1,5 +1,5 @@
 <?php
-namespace BrainGames\Cli;
+namespace BrainGames\GameEngine;
 
 use function cli\line;
 use function cli\prompt;

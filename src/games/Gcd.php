@@ -1,7 +1,7 @@
 <?php
 namespace BrainGames\Game\Gcd;
 
-use function BrainGames\Cli\run;
+use function BrainGames\GameEngine\run;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
