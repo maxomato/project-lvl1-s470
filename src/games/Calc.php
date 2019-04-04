@@ -20,10 +20,10 @@ function getQuestionCalc()
 {
     $a = rand(0, 100);
     $b = rand(0, 100);
-    $operators = getRandomOperators();
+    $operator = OPERATORS[array_rand(OPERATORS)];
 
-    $question = join(' ', [$a, $operators, $b]);
-    $answer = getRightAnswer($a, $b, $operators);
+    $question = "$a $operator $b";
+    $answer = getRightAnswer($a, $b, $operator);
 
     return [
         'question' => $question,
@@ -31,16 +31,9 @@ function getQuestionCalc()
     ];
 }
 
-function getRandomOperators()
+function getRightAnswer(int $a, int $b, string $operator)
 {
-    $i = rand(0, count(OPERATORS) - 1);
-
-    return OPERATORS[$i];
-}
-
-function getRightAnswer(int $a, int $b, string $operation)
-{
-    switch ($operation) {
+    switch ($operator) {
         case '+':
             return $a + $b;
         case '-':
@@ -49,5 +42,5 @@ function getRightAnswer(int $a, int $b, string $operation)
             return $a * $b;
     }
 
-    return null;
+    return false;
 }
