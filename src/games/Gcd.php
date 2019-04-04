@@ -2,7 +2,6 @@
 namespace BrainGames\Game\Gcd;
 
 use function BrainGames\Cli\run;
-use function BrainGames\Game\getRandomNumber;
 
 function runGcd()
 {
@@ -14,8 +13,8 @@ function runGcd()
 
 function getQuestionGcd()
 {
-    $a = getRandomNumber();
-    $b = getRandomNumber();
+    $a = rand(0, 100);
+    $b = rand(0, 100);
 
     $rightAnswer = getGcd($a, $b);
 
@@ -27,5 +26,11 @@ function getQuestionGcd()
 
 function getGcd(int $a, int $b)
 {
+    if ($a == 0) {
+        return $b;
+    } elseif ($b == 0) {
+        return $a;
+    }
+
     return ($a % $b) ? getGcd($b, $a % $b) : $b;
 }

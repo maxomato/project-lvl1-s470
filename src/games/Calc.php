@@ -2,7 +2,6 @@
 namespace BrainGames\Game\Calc;
 
 use function BrainGames\Cli\run;
-use function BrainGames\Game\getRandomNumber;
 
 const OPERATIONS = ['*', '-', '+'];
 
@@ -16,8 +15,8 @@ function runCalc()
 
 function getQuestionCalc()
 {
-    $a = getRandomNumber();
-    $b = getRandomNumber();
+    $a = rand(0, 100);
+    $b = rand(0, 100);
     $operation = getRandomOperation();
 
     $rightAnswer = getRightAnswer($a, $b, $operation);

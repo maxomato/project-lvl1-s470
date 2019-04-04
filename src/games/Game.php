@@ -29,8 +29,3 @@ function getQuestion($type)
         'error' => "Error! Game type '$type' is not supported!"
     ];
 }
-
-function getRandomNumber()
-{
-    return rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-}
