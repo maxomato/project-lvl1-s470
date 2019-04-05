@@ -9,18 +9,13 @@ function runEven()
 {
     run(
         function () {
-            return getSessionEven();
+            $question = rand(0, 100);
+            $answer = isEven($question) ? 'yes' : 'no';
+
+            return [$question, $answer];
         },
         DESCRIPTION
     );
-}
-
-function getSessionEven()
-{
-    $question = rand(0, 100);
-    $answer = isEven($question) ? 'yes' : 'no';
-
-    return [$question, $answer];
 }
 
 function isEven($number)

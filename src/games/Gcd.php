@@ -9,21 +9,16 @@ function runGcd()
 {
     run(
         function () {
-            return getSessionGcd();
+            $a = rand(0, 100);
+            $b = rand(0, 100);
+
+            $question = "$a $b";
+            $answer = getGcd($a, $b);
+
+            return [$question, $answer];
         },
         DESCRIPTION
     );
-}
-
-function getSessionGcd()
-{
-    $a = rand(0, 100);
-    $b = rand(0, 100);
-
-    $question = "$a $b";
-    $answer = getGcd($a, $b);
-
-    return [$question, $answer];
 }
 
 function getGcd(int $a, int $b)

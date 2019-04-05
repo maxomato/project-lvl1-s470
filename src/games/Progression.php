@@ -8,30 +8,24 @@ const DESCRIPTION = 'What number is missing in the progression?';
 
 function runProgression()
 {
-    run(
-        function () {
-            return getSessionProgression();
-        },
-        DESCRIPTION
-    );
-}
+    $game = function () {
+        $start = rand(0, 100);
+        $step = rand(1, 10);
+        $progression = range(
+            $start,
+            $start + $step * LENGTH,
+            $step
+        );
 
-function getSessionProgression()
-{
-    $start = rand(0, 100);
-    $step = rand(1, 10);
-    $progression = range(
-        $start,
-        $start + $step * LENGTH,
-        $step
-    );
+        $hiddenMemberIndex = rand(0, LENGTH - 1);
 
-    $hiddenMemberIndex = rand(0, LENGTH - 1);
+        $answer = $progression[$hiddenMemberIndex];
 
-    $answer = $progression[$hiddenMemberIndex];
+        $progression[$hiddenMemberIndex] = '..';
+        $question = join(' ', $progression);
 
-    $progression[$hiddenMemberIndex] = '..';
-    $question = join(' ', $progression);
+        return [$question, $answer];
+    };
 
-    return [$question, $answer];
+    run($game, DESCRIPTION);
 }

@@ -10,22 +10,17 @@ function runCalc()
 {
     run(
         function () {
-            return getSessionCalc();
+            $a = rand(0, 100);
+            $b = rand(0, 100);
+            $operator = OPERATORS[array_rand(OPERATORS)];
+
+            $question = "$a $operator $b";
+            $answer = getRightAnswer($a, $b, $operator);
+
+            return [$question, $answer];
         },
         DESCRIPTION
     );
-}
-
-function getSessionCalc()
-{
-    $a = rand(0, 100);
-    $b = rand(0, 100);
-    $operator = OPERATORS[array_rand(OPERATORS)];
-
-    $question = "$a $operator $b";
-    $answer = getRightAnswer($a, $b, $operator);
-
-    return [$question, $answer];
 }
 
 function getRightAnswer(int $a, int $b, string $operator)

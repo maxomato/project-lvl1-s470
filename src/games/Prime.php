@@ -9,19 +9,14 @@ function runPrime()
 {
     run(
         function () {
-            return getSessionPrime();
+            $question = rand(0, 100);
+
+            $answer = isPrime($question) ? 'yes' : 'no';
+
+            return [$question, $answer];
         },
         DESCRIPTION
     );
-}
-
-function getSessionPrime()
-{
-    $question = rand(0, 100);
-
-    $answer = isPrime($question) ? 'yes' : 'no';
-
-    return [$question, $answer];
 }
 
 function isPrime(int $number)
