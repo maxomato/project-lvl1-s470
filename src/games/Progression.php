@@ -3,8 +3,6 @@ namespace BrainGames\Game\Progression;
 
 use function BrainGames\GameEngine\run;
 
-const START = 3;
-const STEP = 3;
 const LENGTH = 10;
 const DESCRIPTION = 'What number is missing in the progression?';
 
@@ -20,17 +18,19 @@ function runProgression()
 
 function getSessionProgression()
 {
+    $start = rand(0, 100);
+    $step = rand(1, 10);
     $progression = range(
-        START,
-        START + STEP * LENGTH,
-        STEP
+        $start,
+        $start + $step * LENGTH,
+        $step
     );
 
-    $answerIndex = rand(0, LENGTH);
+    $hiddenMemberIndex = rand(0, LENGTH - 1);
 
-    $answer = $progression[$answerIndex];
+    $answer = $progression[$hiddenMemberIndex];
 
-    $progression[$answerIndex] = '..';
+    $progression[$hiddenMemberIndex] = '..';
     $question = join(' ', $progression);
 
     return [
