@@ -1,0 +1,40 @@
+<?php
+namespace BrainGames\Game\Prime;
+
+use function BrainGames\GameEngine\run;
+
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+function runPrime()
+{
+    run(
+        function () {
+            return getSessionPrime();
+        },
+        DESCRIPTION
+    );
+}
+
+function getSessionPrime()
+{
+    $question = rand(0, 100);
+
+    $answer = isPrime($question) ? 'yes' : 'no';
+
+    return [$question, $answer];
+}
+
+function isPrime(int $number)
+{
+    if ($number == 0) {
+        return false;
+    }
+
+    for ($i = 2; $i < sqrt($number); $i++) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
