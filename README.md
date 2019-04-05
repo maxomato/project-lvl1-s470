@@ -12,7 +12,8 @@ bin/brain-games              it asks your name
 bin/brain-even               it suggests you to guess even parity
 bin/brain-calc               it suggests you to guess the sum of numbers
 bin/brain-gcd                it suggests you to guess the greatest common divisor
-bin/brain-progresstion       it suggests you to guess the next member of geometrical progression 
+bin/brain-progresstion       it suggests you to guess the next member of geometrical progression
+bin/brain-prime              it suggests you to guess prime number
 ```
 
 HOW TO INSTALL AND USE
@@ -42,3 +43,7 @@ Brain Gcd
 Brain Progression
 ------------------
 [![asciicast](https://asciinema.org/a/x4NavXbSaPxCWWLDV5K71bfQE.svg)](https://asciinema.org/a/x4NavXbSaPxCWWLDV5K71bfQE)
+
+Brain Prime
+------------------
+[![asciicast](https://asciinema.org/a/gckP2kzZXvI8TbpP2U2PpAikK.svg)](https://asciinema.org/a/gckP2kzZXvI8TbpP2U2PpAikK)
