@@ -25,10 +25,7 @@ function getSessionCalc()
     $question = "$a $operator $b";
     $answer = getRightAnswer($a, $b, $operator);
 
-    return [
-        'question' => $question,
-        'answer' => $answer
-    ];
+    return [$question, $answer];
 }
 
 function getRightAnswer(int $a, int $b, string $operator)

@@ -33,8 +33,5 @@ function getSessionProgression()
     $progression[$hiddenMemberIndex] = '..';
     $question = join(' ', $progression);
 
-    return [
-        'question' => $question,
-        'answer' => $answer
-    ];
+    return [$question, $answer];
 }

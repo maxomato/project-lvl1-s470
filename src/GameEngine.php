@@ -23,16 +23,14 @@ function run($getSession, string $info)
     }
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $session = $getSession();
+        [$question, $rightAnswer] = $getSession();
 
-        line('Question: %s', $session['question']);
+        line('Question: %s', $question);
 
-        $answer = prompt('Your answer');
+        $userAnswer = prompt('Your answer');
 
-        $rightAnswer = $session['answer'];
-
-        if ($answer != $rightAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
+        if ($userAnswer != $rightAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer);
             line("Let's try again, %s!", $userName);
 
             return;

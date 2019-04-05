@@ -20,10 +20,7 @@ function getSessionEven()
     $question = rand(0, 100);
     $answer = isEven($question) ? 'yes' : 'no';
 
-    return [
-        'question' => $question,
-        'answer' => $answer
-    ];
+    return [$question, $answer];
 }
 
 function isEven($number)

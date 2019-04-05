@@ -23,10 +23,7 @@ function getSessionGcd()
     $question = "$a $b";
     $answer = getGcd($a, $b);
 
-    return [
-        'question' => $question,
-        'answer' => $answer
-    ];
+    return [$question, $answer];
 }
 
 function getGcd(int $a, int $b)
