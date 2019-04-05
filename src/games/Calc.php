@@ -39,5 +39,5 @@ function getRightAnswer(int $a, int $b, string $operator)
             return $a * $b;
     }
 
-    return false;
+    throw new \Exception("Error! The operator '$operator' is not supported");
 }
