@@ -6,24 +6,18 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function run($getSession, string $info)
+function run(\Closure $game, string $about)
 {
     line('Welcome to the Brain Game!');
-    if (!empty($info)) {
-        line($info);
-    }
+    line($about);
     line();
 
     $userName = prompt('May I have your name?');
     line("Hello, %s!", $userName);
     line();
 
-    if (is_null($getSession)) {
-        return;
-    }
-
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $rightAnswer] = $getSession();
+        [$question, $rightAnswer] = $game();
 
         line('Question: %s', $question);
 

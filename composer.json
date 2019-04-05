@@ -19,6 +19,7 @@
     ],
     "autoload": {
         "files": [
+            "src/Welcome.php",
             "src/GameEngine.php",
             "src/games/Calc.php",
             "src/games/Even.php",
