@@ -6,7 +6,7 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function run(\Closure $getQuestion = null, string $info = '')
+function run($getSession, string $info)
 {
     line('Welcome to the Brain Game!');
     if (!empty($info)) {
@@ -18,18 +18,18 @@ function run(\Closure $getQuestion = null, string $info = '')
     line("Hello, %s!", $userName);
     line();
 
-    if (is_null($getQuestion)) {
+    if (is_null($getSession)) {
         return;
     }
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $question = $getQuestion();
+        $session = $getSession();
 
-        line('Question: %s', $question['question']);
+        line('Question: %s', $session['question']);
 
         $answer = prompt('Your answer');
 
-        $rightAnswer = $question['answer'];
+        $rightAnswer = $session['answer'];
 
         if ($answer != $rightAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
