@@ -6,10 +6,10 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function run(\Closure $game, string $about)
+function run(\Closure $createGame, string $description)
 {
     line('Welcome to the Brain Game!');
-    line($about);
+    line($description);
     line();
 
     $userName = prompt('May I have your name?');
@@ -17,7 +17,7 @@ function run(\Closure $game, string $about)
     line();
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $rightAnswer] = $game();
+        [$question, $rightAnswer] = $createGame();
 
         line('Question: %s', $question);
 

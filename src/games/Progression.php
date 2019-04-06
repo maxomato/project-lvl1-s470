@@ -8,7 +8,7 @@ const DESCRIPTION = 'What number is missing in the progression?';
 
 function runProgression()
 {
-    $game = function () {
+    $createGame = function () {
         $start = rand(0, 100);
         $step = rand(1, 10);
         $progression = range(
@@ -27,5 +27,5 @@ function runProgression()
         return [$question, $answer];
     };
 
-    run($game, DESCRIPTION);
+    run($createGame, DESCRIPTION);
 }

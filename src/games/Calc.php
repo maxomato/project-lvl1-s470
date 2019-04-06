@@ -8,19 +8,18 @@ const DESCRIPTION = 'What is the result of the expression?';
 
 function runCalc()
 {
-    run(
-        function () {
-            $a = rand(0, 100);
-            $b = rand(0, 100);
-            $operator = OPERATORS[array_rand(OPERATORS)];
+    $createGame = function () {
+        $a = rand(0, 100);
+        $b = rand(0, 100);
+        $operator = OPERATORS[array_rand(OPERATORS)];
 
-            $question = "$a $operator $b";
-            $answer = getRightAnswer($a, $b, $operator);
+        $question = "$a $operator $b";
+        $answer = getRightAnswer($a, $b, $operator);
 
-            return [$question, $answer];
-        },
-        DESCRIPTION
-    );
+        return [$question, $answer];
+    };
+
+    run($createGame, DESCRIPTION);
 }
 
 function getRightAnswer(int $a, int $b, string $operator)
