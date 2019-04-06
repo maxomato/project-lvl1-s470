@@ -7,7 +7,7 @@ const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no
 
 function runPrime()
 {
-    $createGame = function () {
+    $createGameData = function () {
         $question = rand(0, 100);
 
         $answer = isPrime($question) ? 'yes' : 'no';
@@ -15,7 +15,7 @@ function runPrime()
         return [$question, $answer];
     };
 
-    run($createGame, DESCRIPTION);
+    run($createGameData, DESCRIPTION);
 }
 
 function isPrime(int $number)

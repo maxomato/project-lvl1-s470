@@ -8,7 +8,7 @@ const DESCRIPTION = 'What is the result of the expression?';
 
 function runCalc()
 {
-    $createGame = function () {
+    $createGameData = function () {
         $a = rand(0, 100);
         $b = rand(0, 100);
         $operator = OPERATORS[array_rand(OPERATORS)];
@@ -19,7 +19,7 @@ function runCalc()
         return [$question, $answer];
     };
 
-    run($createGame, DESCRIPTION);
+    run($createGameData, DESCRIPTION);
 }
 
 function getRightAnswer(int $a, int $b, string $operator)

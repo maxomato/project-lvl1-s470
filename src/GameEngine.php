@@ -6,7 +6,7 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function run(\Closure $createGame, string $description)
+function run(\Closure $createGameData, string $description)
 {
     line('Welcome to the Brain Game!');
     line($description);
@@ -17,7 +17,7 @@ function run(\Closure $createGame, string $description)
     line();
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $rightAnswer] = $createGame();
+        [$question, $rightAnswer] = $createGameData();
 
         line('Question: %s', $question);
 

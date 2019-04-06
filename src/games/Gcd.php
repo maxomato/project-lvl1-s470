@@ -7,7 +7,7 @@ const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function runGcd()
 {
-    $createGame = function () {
+    $createGameData = function () {
         $a = rand(0, 100);
         $b = rand(0, 100);
 
@@ -17,7 +17,7 @@ function runGcd()
         return [$question, $answer];
     };
 
-    run($createGame, DESCRIPTION);
+    run($createGameData, DESCRIPTION);
 }
 
 function getGcd(int $a, int $b)

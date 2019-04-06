@@ -7,14 +7,14 @@ const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function runEven()
 {
-    $createGame = function () {
+    $createGameData = function () {
         $question = rand(0, 100);
         $answer = isEven($question) ? 'yes' : 'no';
 
         return [$question, $answer];
     };
 
-    run($createGame, DESCRIPTION);
+    run($createGameData, DESCRIPTION);
 }
 
 function isEven($number)
